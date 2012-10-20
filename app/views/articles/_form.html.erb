@@ -1,3 +1,9 @@
+<%
+=begin 
+error mssages
+=end
+%>
+
 <%= form_for(@article) do |f| %>
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -15,15 +21,18 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
+
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content, :class => 'tinymce', :rows => 20 , :cols => 30 %>
+    <%= f.text_area :content, :class => 'tinymce', :rows => 30 , :cols => 30 %>
     <%= tinymce :theme => 'advanced' %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
